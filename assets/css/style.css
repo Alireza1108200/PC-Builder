@@ -1,0 +1,363 @@
+/*
+ * PC Builder - Main Stylesheet
+ * Architecture: Mobile-first, CSS Grid/Flexbox, Material 3 Design Tokens
+ */
+
+@import url("colors.css");
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap");
+
+/* Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Document Base Styles */
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.25s var(--md-sys-motion-easing),
+              color 0.25s var(--md-sys-motion-easing);
+}
+
+/* Top Navigation Bar */
+.site-header {
+  background-color: var(--md-sys-color-surface-container-low);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--md-sys-color-on-surface);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.brand-logo-svg {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--md-sys-shape-corner-md);
+  transition: transform 0.2s var(--md-sys-motion-easing);
+}
+
+.brand-link:hover .brand-logo-svg {
+  transform: scale(1.05);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-item-link {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: var(--md-sys-shape-corner-md);
+  text-decoration: none;
+  color: var(--md-sys-color-on-surface-variant);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.2s var(--md-sys-motion-easing),
+              color 0.2s var(--md-sys-motion-easing);
+}
+
+.nav-item-link:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+  color: var(--md-sys-color-primary);
+}
+
+.nav-item-link.active {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  font-weight: 600;
+}
+
+/* Page Layout */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px 48px;
+}
+
+.card-container {
+  width: 100%;
+  max-width: 580px;
+  background-color: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-xl);
+  padding: 24px 20px;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--md-sys-color-shadow) 6%, transparent);
+  transition: box-shadow 0.25s var(--md-sys-motion-easing);
+}
+
+/* Card Header */
+.card-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.6;
+}
+
+/* Form Styles */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required-badge {
+  color: var(--md-sys-color-error);
+  font-size: 0.9rem;
+}
+
+/* Form Inputs, Selects, and Textareas */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface-container-lowest);
+  border: 1.5px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-md);
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.2s var(--md-sys-motion-easing),
+              box-shadow 0.2s var(--md-sys-motion-easing),
+              background-color 0.2s var(--md-sys-motion-easing);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--md-sys-color-outline);
+  opacity: 0.8;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-sys-color-primary) 18%, transparent);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Native HTML5 Validation States */
+.form-input:user-invalid,
+.form-select:user-invalid,
+.form-textarea:user-invalid {
+  border-color: var(--md-sys-color-error);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-sys-color-error) 15%, transparent);
+}
+
+.form-hint {
+  font-size: 0.82rem;
+  color: var(--md-sys-color-outline);
+  line-height: 1.4;
+}
+
+.form-input:user-invalid ~ .form-hint-error {
+  display: block;
+}
+
+.form-hint-error {
+  display: none;
+  font-size: 0.82rem;
+  color: var(--md-sys-color-error);
+  line-height: 1.4;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--md-sys-color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-size: 0.9rem;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--md-sys-shape-corner-md);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s var(--md-sys-motion-easing),
+              box-shadow 0.2s var(--md-sys-motion-easing),
+              background-color 0.2s var(--md-sys-motion-easing),
+              color 0.2s var(--md-sys-motion-easing);
+}
+
+.btn-primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--md-sys-color-primary) 30%, transparent);
+}
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 88%, white);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--md-sys-color-primary) 40%, transparent);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--md-sys-color-primary) 30%, transparent);
+}
+
+/* Switch / Secondary Links */
+.auth-switch-text {
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: 16px;
+}
+
+.auth-link {
+  color: var(--md-sys-color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  margin-inline-start: 4px;
+  transition: text-decoration-color 0.2s var(--md-sys-motion-easing);
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--md-sys-color-surface-container-low);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  padding: 20px 16px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--md-sys-color-outline);
+}
+
+/* Responsive Grid for Tablets and Desktops */
+@media (min-width: 640px) {
+  .card-container {
+    padding: 36px 32px;
+  }
+
+  .form-grid-two-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .btn {
+    width: auto;
+  }
+}
