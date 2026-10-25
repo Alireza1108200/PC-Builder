@@ -6,11 +6,35 @@
 @import url("colors/light.css");
 @import url("colors/dark.css");
 
-/* Local Typography (Vazirmatn Variable Font) */
+/* Local Typography (Vazirmatn Persian-Digits) */
 @font-face {
   font-family: "Vazirmatn";
-  src: url("../fonts/Vazirmatn-RD[wght].woff2") format("woff2-variations");
-  font-weight: 100 900;
+  src: url("../fonts/Vazirmatn-RD-FD-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-RD-FD-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-RD-FD-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-RD-FD-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
