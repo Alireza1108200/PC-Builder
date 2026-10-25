@@ -6,7 +6,7 @@
   <title>تماس با ما | PC Builder</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="light">
   <!-- Global Header & Navigation -->
   <header class="site-header">
     <div class="nav-container">
@@ -27,6 +27,19 @@
           <li><a href="register.html" class="nav-item-link">ثبت‌نام</a></li>
         </ul>
       </nav>
+
+      <div class="nav-actions">
+        <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر به حالت تاریک (Dark Mode)" aria-pressed="false">
+          <!-- Sun icon (shown in dark mode to switch to light) -->
+          <svg class="theme-toggle-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm8-7a1 1 0 0 1 1 1 1 1 0 1 1-2 0 1 1 0 0 1 1-1zM5 12a1 1 0 0 1 1 1 1 1 0 1 1-2 0 1 1 0 0 1 1-1zm12.95-6.95a1 1 0 0 1 1.41 1.41l-.7.71a1 1 0 1 1-1.42-1.42l.71-.7zm-11.31 11.3a1 1 0 0 1 1.41 1.42l-.7.7a1 1 0 1 1-1.42-1.41l.71-.71zm12.02 0a1 1 0 0 1 0 1.42l-.71.7a1 1 0 1 1-1.41-1.41l.7-.71a1 1 0 0 1 1.42 0zM6.64 6.46a1 1 0 0 1 0 1.42l-.71.7a1 1 0 1 1-1.41-1.41l.7-.71a1 1 0 0 1 1.42 0zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/>
+          </svg>
+          <!-- Moon icon (shown in light mode to switch to dark) -->
+          <svg class="theme-toggle-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -144,5 +157,7 @@
   <footer class="site-footer">
     <p class="footer-text">© ۲۰۲۶ PC Builder — سامانه تخصصی انتخاب و اسمبل آنلاین قطعات کامپیوتر</p>
   </footer>
+
+  <script src="assets/js/theme.js" defer></script>
 </body>
 </html>

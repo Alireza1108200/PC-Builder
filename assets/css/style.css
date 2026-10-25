@@ -3,8 +3,26 @@
  * Architecture: Mobile-first, CSS Grid/Flexbox, Material 3 Design Tokens
  */
 
-@import url("colors.css");
-@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap");
+@import url("colors/light.css");
+@import url("colors/dark.css");
+
+/* Local Typography (Vazirmatn Variable Font) */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-RD[wght].woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Global Design Tokens (Shape & Motion) */
+:root {
+  --md-sys-shape-corner-sm: 8px;
+  --md-sys-shape-corner-md: 12px;
+  --md-sys-shape-corner-lg: 16px;
+  --md-sys-shape-corner-xl: 28px;
+  --md-sys-motion-easing: cubic-bezier(0.2, 0, 0, 1);
+}
 
 /* Global Box Sizing */
 *,
@@ -108,6 +126,56 @@ body {
   background-color: var(--md-sys-color-secondary-container);
   color: var(--md-sys-color-on-secondary-container);
   font-weight: 600;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--md-sys-shape-corner-md);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  transition: background-color 0.2s var(--md-sys-motion-easing),
+              border-color 0.2s var(--md-sys-motion-easing),
+              transform 0.15s var(--md-sys-motion-easing);
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+  border-color: var(--md-sys-color-primary);
+  transform: scale(1.05);
+}
+
+.theme-toggle-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+body.light .theme-icon-light {
+  display: block;
+}
+
+body.light .theme-icon-dark {
+  display: none;
+}
+
+body.dark .theme-icon-light {
+  display: none;
+}
+
+body.dark .theme-icon-dark {
+  display: block;
 }
 
 /* Page Layout */
