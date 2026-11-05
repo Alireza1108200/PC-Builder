@@ -1,0 +1,15 @@
+# Agent markdown files - hidden
+*.md
+
+# Exceptions - these must be tracked
+!README.md
+!CONTRIBUTING.md
+!docs/setup.md
+
+# Tasks folder
+/TASKS/
+
+# Environment
+.env
+.env.*
+!.env.example
